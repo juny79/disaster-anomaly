@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compose up",
+      "type": "shell",
+      "command": "docker compose up --build",
+      "problemMatcher": []
+    },
+    {
+      "label": "compose down",
+      "type": "shell",
+      "command": "docker compose down -v",
+      "problemMatcher": []
+    },
+    {
+      "label": "curl predict",
+      "type": "shell",
+      "command": "curl -X POST http://localhost:8000/predict -H \"Content-Type: application/json\" -d '{\"use_latest\": true}'",
+      "problemMatcher": []
+    }
+  ]
+}

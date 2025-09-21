@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS quakes (
+  id TEXT PRIMARY KEY,
+  time TIMESTAMPTZ,
+  mag DOUBLE PRECISION,
+  place TEXT,
+  lon DOUBLE PRECISION,
+  lat DOUBLE PRECISION,
+  raw JSONB
+);
+CREATE INDEX IF NOT EXISTS quakes_time_idx ON quakes(time DESC);

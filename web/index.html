@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Disaster Anomaly — Working Skeleton</h2>
+    <button id="btn">Check Latest</button>
+    <pre id="out"></pre>
+    <script>
+      document.getElementById('btn').onclick = async () => {
+        const r = await fetch('http://localhost:8000/predict', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({use_latest:true})
+        });
+        const j = await r.json();
+        document.getElementById('out').textContent = JSON.stringify(j, null, 2);
+      };
+    </script>
+  </body>
+</html>
